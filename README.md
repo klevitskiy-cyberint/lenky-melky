@@ -50,9 +50,10 @@ node app.js
 
 Use the link
 
-> `http://domain/url?value=aHR0cHM6Ly9jeWJlcmludC5jb20=`
+> `http://domain/url?image=Chrome&value=aHR0cHM6Ly9jeWJlcmludC5jb20=`
 
 - `value` is Base64 encoded URL, where `aHR0cHM6Ly9jeWJlcmludC5jb20=` value is encoded cyberint.com
+- `image` is Kasm image name (Kasm image that is based off of the desktop container)
 
 The app responds with direct link to created Kasm session.
 

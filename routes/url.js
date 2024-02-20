@@ -3,6 +3,7 @@ const express = require('express');
 const axios = require('axios').default;
 const https = require('https');
 const bunyan = require('bunyan');
+const e = require('express');
 
 var log = bunyan.createLogger({name: "url"});
 
@@ -22,12 +23,14 @@ router.get('/', async function(req, res, next) {
 
   // Access the provided 'url' query parameter
   const url = Buffer.from(req.query.value, 'base64');
+  const requestedImage = req.query.image || process.env.KASM_IMAGE_NAME;
   const decodedUrl = url.toString('utf8');
+  log.info(`requestedImage: ${requestedImage}`);
   log.info(`decodedUrl: ${decodedUrl}`);
 
   // get kasm images list
   const imagesList = await getKasmImagesList();
-  const image_id = imagesList.res.body.images.filter((image) => image.friendly_name == process.env.KASM_IMAGE_NAME)[0].image_id;
+  const image_id = imagesList.res.body.images.filter((image) => image.friendly_name == requestedImage)[0].image_id;
   log.info(`image_id: ${image_id}`);
 
   // create kasm temp user
