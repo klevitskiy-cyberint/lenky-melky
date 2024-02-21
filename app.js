@@ -14,6 +14,7 @@ const port = process.env.APP_PORT;
 
 const indexRouter = require('./routes/index');
 const urlRouter = require('./routes/url');
+const binaryRouter = require('./routes/binary');
 
 const cors = require('cors');
 app.use(cors());
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/url', urlRouter);
+app.use('/binary', binaryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
