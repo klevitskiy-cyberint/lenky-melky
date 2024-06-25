@@ -50,6 +50,8 @@ node app.js
 
 Use the link
 
+**View link**
+
 > `http://domain/url?image=Chrome&value=aHR0cHM6Ly9jeWJlcmludC5jb20=`
 
 - `value` is Base64 encoded URL, where `aHR0cHM6Ly9jeWJlcmludC5jb20=` value is encoded cyberint.com
@@ -60,3 +62,10 @@ The app responds with direct link to created Kasm session.
 *Example*
 
 `https://10.211.55.3/#/connect/kasm/7d78b5fa-0b9b-4301-a0d0-7195cae5f64f/f99db96972504d1ca2cc0cb5d1b75e4b/d528263f-fa01-4446-bc5e-024b33be99e0?disable_control_panel=1&disable_tips=1&disable_chat=1&disable_fixed_res=1`
+
+**Open binary**
+
+> `http://domain/binary?value=aHR0cHM6Ly9jeWJlcmludC5jb20=`
+
+- `value` is Base64 encoded URL, where `aHR0cHM6Ly9jeWJlcmludC5jb20=` value is encoded cyberint.com (direct path to a binary file for downloading)
+
